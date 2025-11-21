@@ -63,8 +63,8 @@ applications:
     - resources-finalizer.argocd.argoproj.io
     project: default
     sources:
-    - repoURL: oci://registry-1.docker.io/bitnamicharts
-      chart: redis-cluster
+    - repoURL: oci://registry-1.docker.io/bitnamicharts/redis-cluster
+      path: .
       targetRevision: 13.0.4
       helm:
         releaseName: redis-cluster
