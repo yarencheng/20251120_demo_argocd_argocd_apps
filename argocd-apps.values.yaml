@@ -123,7 +123,9 @@ applications:
     sources:
     - repoURL: https://github.com/yarencheng/20251120_demo_argocd_myapp
       path: .
-      targetRevision: 1.2.3 # 1.2.3 is a branch
+
+      targetRevision: 1.23 # a tag
+
       helm:
         releaseName: myapp-production
     destination:
