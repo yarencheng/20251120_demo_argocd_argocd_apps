@@ -19,9 +19,12 @@ applications:
     destination:
       server: https://kubernetes.default.svc
     syncPolicy:
+
+      # Sync automatically if automated:{} is not empty
       automated:
         prune: false
         selfHeal: false
+
       syncOptions:
       - CreateNamespace=true
   argo-cd:
@@ -44,6 +47,8 @@ applications:
     destination:
       server: https://kubernetes.default.svc
     syncPolicy:
+
+      # Sync automatically if automated:{} is not empty
       automated:
         prune: false
         selfHeal: false
