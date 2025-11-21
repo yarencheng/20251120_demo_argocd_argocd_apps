@@ -1,0 +1,11 @@
+createAggregateRoles: true
+configs:
+  secret:
+    # plain text: fishforever
+    argocdServerAdminPassword: $2a$12$TBMyP8FkdUBvMMZMgr7EDOHstFW47txI9WhSjDXXYXRSaRCXmN/Me
+credentialTemplates:
+  woonetwork-woo-devops-woo-x:
+    type: git
+    url: https://gitlab.com/woonetwork/woo-devops/woo-x
+    password: glpat-QABozAwHswEGVyHPdGGs
+    username: empty

@@ -24,3 +24,28 @@ applications:
         selfHeal: false
       syncOptions:
       - CreateNamespace=true
+  argo-cd:
+    namespace: argo-cd
+    revisionHistoryLimit: 2
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    project: default
+    sources:
+    - repoURL: https://argoproj.github.io/argo-helm
+      chart: argo-cd
+      targetRevision: 9.1.3
+      helm:
+        releaseName: argo-cd
+        valueFiles:
+        - $values/argo-cd.values.yaml
+    - repoURL: 'https://github.com/yarencheng/20251120_demo_argocd_argocd_apps.git'
+      targetRevision: main
+      ref: values
+    destination:
+      server: https://kubernetes.default.svc
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+      - CreateNamespace=true
